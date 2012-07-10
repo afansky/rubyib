@@ -49,15 +49,17 @@ div.thread {
     margin-top: 5px;
     display: inline-block;
     float: left;
+
+    background-color: #DDD;
+}
+
+.thread_post:first-child {
+    border: none;
+    background-color: inherit;
 }
 
 .post_delimiter {
     clear: both;
-}
-
-.thread .thread_post:first-child + .thread_post {
-    margin-top: 170px;
-    margin-left: 15px;
 }
 
 .thread_post .post_title {
