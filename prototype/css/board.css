@@ -1,3 +1,7 @@
+body {
+    background-color: #EEE;
+}
+
 #create_thread_container {
     margin-left: auto;
     margin-right: auto;
@@ -31,7 +35,7 @@
 #create_thread_container .title {
     display: table-caption;
     padding-bottom: 5px;
-    margin-left: 120px;
+    text-align: center;
     font-weight: bold;
 }
 
@@ -89,3 +93,8 @@ div.thread {
     width: auto;
     margin-left: 10px;
 }
+
+.post_footer {
+    color: #707070;
+}
+
