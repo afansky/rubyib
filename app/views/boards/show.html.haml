@@ -1,0 +1,167 @@
+%html { :xmlns => "http://www.w3.org/1999/xhtml", :lang => "en", "xml:lang" => "en" }
+    %head
+        %title Board page
+
+        %link { :rel => "stylesheet", :type => "text/css", :href => "css/board.css" }
+    %body
+
+        #create_thread_container
+            %form { :action => '#' }
+                %span.title Create new thread
+
+                %span
+                    %label { :for => 'thread_name' } Name:
+                    %input#thread_name { :type => 'text' }
+
+                %span
+                    %label { :for => 'thread_email' } Email:
+                    %input#thread_email { :type => 'text' }
+
+                %span
+                    %label { :for => 'thread_topic' } Topic:
+                    %input#thread_topic { :type => 'text' }
+
+                %span
+                    %label { :for => 'thread_text' } Text:
+                    %textarea#thread_text { :rows => '10', :cols => '35' }
+
+                %span.submit
+                    %button { :type => 'submit' } Create
+
+        %hr
+
+        #thread_list
+            .thread
+                .thread_post
+                    .post title
+                        %span My cool title
+                        %span Anonymous
+                        %span Fri 06 Jul 2012 05:40:43
+                        %span
+                            %a { :href => 'thread.html' } Reply
+
+
+
+
+
+<div id="thread_list">
+    <div class="thread">
+        <div class="thread_post">
+            <div class="post_title">
+                <span>My cool title</span><span>Anonymous</span><span>Fri 06 Jul 2012 05:40:43</span><span><a href="#">#21</a></span><span>[<a href="thread.html">Reply</a>]</span>
+            </div>
+            <div class="post_contents">
+                A paragraph of text. <br/>
+                A second row of text. <br/>
+                <br/>
+                A third line of text.<br/>
+            </div>
+            <div class="post_footer">
+                54 posts and 44 image replies omitted. Click Reply to view.
+            </div>
+        </div>
+
+        <div class="post_delimiter"></div>
+
+        <div class="thread_post">
+            <div class="post_title">
+                <span>My cool title</span><span>Anonymous</span><span>Fri 06 Jul 2012 05:44:43</span><span><a href="#">#22</a></span>
+            </div>
+            <div class="post_contents">
+                A paragraph of text. <br/>
+                A second row of text. <br/>
+                <br/>
+                A third line of text.<br/>
+            </div>
+        </div>
+
+        <div class="post_delimiter"></div>
+
+        <div class="thread_post">
+            <div class="post_title">
+                <span>My cool title</span><span>Anonymous</span><span>Fri 06 Jul 2012 05:46:43</span><span><a href="#">#23</a></span>
+            </div>
+            <div class="post_contents">
+                A paragraph of text. <br/>
+                A second row of text. <br/>
+                <br/>
+                A third line of text.<br/>
+            </div>
+        </div>
+
+        <div class="post_delimiter"></div>
+
+        <div class="thread_post">
+            <div class="post_title">
+                <span>My cool title</span><span>Anonymous</span><span>Fri 06 Jul 2012 05:48:43</span><span><a href="#">#24</a></span>
+            </div>
+            <div class="post_contents">
+                A paragraph of text. <br/>
+                A second row of text. <br/>
+                <br/>
+                A third line of text.<br/>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="thread">
+        <div class="thread_post">
+            <div class="post_title">
+                <span>My cool title</span><span>Anonymous</span><span>Fri 06 Jul 2012 05:40:43</span><span><a href="#">#21</a></span><span>[<a href="thread.html">Reply</a>]</span>
+            </div>
+            <div class="post_contents">
+                A paragraph of text. <br/>
+                A second row of text. <br/>
+                <br/>
+                A third line of text.<br/>
+            </div>
+            <div class="post_footer">
+                54 posts and 44 image replies omitted. Click Reply to view.
+            </div>
+        </div>
+
+        <div class="post_delimiter"></div>
+
+        <div class="thread_post">
+            <div class="post_title">
+                <span>My cool title</span><span>Anonymous</span><span>Fri 06 Jul 2012 05:44:43</span><span><a href="#">#22</a></span>
+            </div>
+            <div class="post_contents">
+                A paragraph of text. <br/>
+                A second row of text. <br/>
+                <br/>
+                A third line of text.<br/>
+            </div>
+        </div>
+
+        <div class="post_delimiter"></div>
+
+        <div class="thread_post">
+            <div class="post_title">
+                <span>My cool title</span><span>Anonymous</span><span>Fri 06 Jul 2012 05:46:43</span><span><a href="#">#23</a></span>
+            </div>
+            <div class="post_contents">
+                A paragraph of text. <br/>
+                A second row of text. <br/>
+                <br/>
+                A third line of text.<br/>
+            </div>
+        </div>
+
+        <div class="post_delimiter"></div>
+
+        <div class="thread_post">
+            <div class="post_title">
+                <span>My cool title</span><span>Anonymous</span><span>Fri 06 Jul 2012 05:48:43</span><span><a href="#">#24</a></span>
+            </div>
+            <div class="post_contents">
+                A paragraph of text. <br/>
+                A second row of text. <br/>
+                <br/>
+                A third line of text.<br/>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
