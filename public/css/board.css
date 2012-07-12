@@ -79,6 +79,10 @@ div.thread {
     padding-bottom: 50px;
 }
 
+.post_contents p {
+    margin: 0;
+}
+
 .post_title span:first-child {
     float: left;
     margin-left: 0;
