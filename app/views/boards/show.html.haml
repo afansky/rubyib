@@ -24,42 +24,21 @@
 %hr
 
 #thread_list
-    .thread
-        .thread_post
-            .post_title
-                %span My cool title
-                %span Anonymous
-                %span Fri 06 Jul 2012 05:40:43
-                %span #21
-                %span
-                    [
-                    %a{:href => 'thread.html'} Reply
-                    ]
-            .post_contents
-                %p A paragraph of text.
-                %p A second row of text.
-                %br
-                %p A third line of text.
-            .post_footer 54 posts and 44 image replies omitted. Click Reply to view.
-        .post_delimiter
-        .thread_post
-            .post_title
-                %span My cool title
-                %span Anonymous
-                %span Fri 06 Jul 2012 05:40:43
-                %span #22
-            .post_contents
-                %p A paragraph of text.
-                %p A second row of text.
-                %br
-                %p A third line of text.
-        .post_delimiter
-        .thread_post
-            .post_title
-                %span My cool title
-                %span Anonymous
-                %span Fri 06 Jul 2012 05:40:43
-                %span #23
-            .post_contents
-                %p A paragraph of text.
-        .post_delimiter
+    - @board.board_threads.each do |thread|
+        .thread
+            - thread.posts.each do |post|
+                .thread_post
+                    .post_title
+                        %span= post.topic
+                        %span= post.name
+                        %span= post.creation_date
+                        %span= post.post_number
+                        %span
+                            [
+                            %a{:href => 'thread.html'} Reply
+                            ]
+                    .post_contents
+                        %p= post.text
+                    - if thread.posts.first == post
+                        .post_footer 54 posts and 44 image replies omitted. Click Reply to view.
+                .post_delimiter
