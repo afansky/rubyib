@@ -26,19 +26,29 @@
 #thread_list
     - @board.board_threads.each do |thread|
         .thread
-            - thread.posts.each do |post|
+            -#root post
+            .thread_post
+                .post_title
+                    %span= thread.posts.first.topic
+                    %span= thread.posts.first.name
+                    %span= thread.posts.first.creation_date
+                    %span= "##{thread.posts.first.id}"
+                    %span
+                        [
+                        %a{:href => 'thread.html'} Reply
+                        ]
+                .post_contents
+                    %p= thread.posts.first.text
+                .post_footer 54 posts and 44 image replies omitted. Click Reply to view.
+            .post_delimiter
+            -#other posts
+            - thread.posts.most_recent.each do |post|
                 .thread_post
                     .post_title
                         %span= post.topic
                         %span= post.name
                         %span= post.creation_date
                         %span= "##{post.id}"
-                        %span
-                            [
-                            %a{:href => 'thread.html'} Reply
-                            ]
                     .post_contents
                         %p= post.text
-                    - if thread.posts.first == post
-                        .post_footer 54 posts and 44 image replies omitted. Click Reply to view.
                 .post_delimiter
