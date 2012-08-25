@@ -8,5 +8,11 @@ class BoardThread < ActiveRecord::Base
 
       posts.delete_if { |post| post == first_post }
     end
+
+    def omitted_count
+      omitted = (find :all).length - most_recent.length
+
+      omitted - 1 unless omitted <= 0
+    end
   end
 end

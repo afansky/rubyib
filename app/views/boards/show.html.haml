@@ -39,7 +39,8 @@
                         ]
                 .post_contents
                     %p= thread.posts.first.text
-                .post_footer 54 posts and 44 image replies omitted. Click Reply to view.
+                - if thread.posts.omitted_count > 0
+                    .post_footer= "#{thread.posts.omitted_count} posts omitted. Click Reply to view."
             .post_delimiter
             -#other posts
             -thread.posts.most_recent.each do |post|
