@@ -3,20 +3,20 @@
         %span.title Create new post
 
         %span
-            %label{:for => 'thread_name'} Name:
-            %input#thread_name{:type => 'text', :name => 'name'}
+            = f.label :name, 'Name'
+            = f.text_field :name, :id => 'thread_name'
 
         %span
-            %label{:for => 'thread_email'} Email:
-            %input#thread_email{:type => 'text', :name => 'email'}
+            = f.label :email, 'Email'
+            = f.text_field :email, :id => 'thread_email'
 
         %span
-            %label{:for => 'thread_topic'} Topic:
-            %input#thread_topic{:type => 'text', :name => 'topic'}
+            = f.label :topic, 'Topic'
+            = f.text_field :topic, :id => 'thread_topic'
 
         %span
-            %label{:for => 'thread_text'} Text:
-            %textarea#thread_text{:rows => '10', :cols => '35', :name => 'text'}
+            = f.label :text, 'Text'
+            = f.text_area :text, :id => 'thread_text', :rows => '10', :cols => '35'
 
         %span.submit
             %button{:type => 'submit'} Create
