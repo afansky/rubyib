@@ -1,22 +1,22 @@
 #create_thread_container
-    %form{:action => '#'}
+    = form_for [@board, @new_thread] do |f|
         %span.title Create new thread
 
         %span
             %label{:for => 'thread_name'} Name:
-            %input#thread_name{:type => 'text'}
+            %input#thread_name{:type => 'text', :name => 'name'}
 
         %span
             %label{:for => 'thread_email'} Email:
-            %input#thread_email{:type => 'text'}
+            %input#thread_email{:type => 'text', :name => 'email'}
 
         %span
             %label{:for => 'thread_topic'} Topic:
-            %input#thread_topic{:type => 'text'}
+            %input#thread_topic{:type => 'text', :name => 'topic'}
 
         %span
             %label{:for => 'thread_text'} Text:
-            %textarea#thread_text{:rows => '10', :cols => '35'}
+            %textarea#thread_text{:rows => '10', :cols => '35', :name => 'text'}
 
         %span.submit
             %button{:type => 'submit'} Create
@@ -24,26 +24,26 @@
 %hr
 
 #thread_list
-    - @board.board_threads.each do |thread|
+    - @board.board_threads.find_all {|t| t.posts.length > 0}.each do |board_thread|
         .thread
             -#root post
             .thread_post
                 .post_title
-                    %span= thread.posts.first.topic
-                    %span= thread.posts.first.name
-                    %span= thread.posts.first.creation_date
-                    %span= "##{thread.posts.first.post_number}"
+                    %span= board_thread.posts.first.topic
+                    %span= board_thread.posts.first.name
+                    %span= board_thread.posts.first.creation_date
+                    %span= "##{board_thread.posts.first.post_number}"
                     %span
                         [
                         %a{:href => 'thread.html'} Reply
                         ]
                 .post_contents
-                    %p= thread.posts.first.text
-                - if thread.posts.omitted_count > 0
-                    .post_footer= "#{thread.posts.omitted_count} posts omitted. Click Reply to view."
+                    %p= board_thread.posts.first.text
+                - if board_thread.posts.omitted_count > 0
+                    .post_footer= "#{board_thread.posts.omitted_count} posts omitted. Click Reply to view."
             .post_delimiter
             -#other posts
-            -thread.posts.most_recent.each do |post|
+            -board_thread.posts.most_recent.each do |post|
                 .thread_post
                     .post_title
                         %span= post.topic
@@ -53,3 +53,4 @@
                     .post_contents
                         %p= post.text
                 .post_delimiter
+        %hr

@@ -57,7 +57,7 @@ Rubyib::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   resources :boards, :only => :show do
-    resources :threads, :only => [:show, :create] do
+    resources :board_threads, :only => [:show, :create] do
       resources :posts, :only => :create
     end
   end
