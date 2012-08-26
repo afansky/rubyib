@@ -29,7 +29,7 @@
             -#root post
             .thread_post
                 .post_title
-                    %span= board_thread.posts.first.topic
+                    %span{:class => :post_topic}= board_thread.posts.first.topic
                     %span= board_thread.posts.first.name
                     %span= board_thread.posts.first.creation_date
                     %span= "##{board_thread.posts.first.post_number}"
@@ -46,7 +46,7 @@
             -board_thread.posts.most_recent.each do |post|
                 .thread_post
                     .post_title
-                        %span= post.topic
+                        %span{:class => :post_topic}= post.topic
                         %span= post.name
                         %span= post.creation_date
                         %span= "##{post.post_number}"
