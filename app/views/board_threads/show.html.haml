@@ -18,6 +18,8 @@
             = f.label :text, 'Text'
             = f.text_area :text, :id => 'thread_text', :rows => '10', :cols => '35'
 
+        = f.hidden_field :board_thread_id
+
         %span.submit
             %button{:type => 'submit'} Create
 
