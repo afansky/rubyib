@@ -14,7 +14,7 @@ class InitialDatabase < ActiveRecord::Migration
       t.string :email
       t.string :topic
       t.text :text
-      t.date :creation_date
+      t.datetime :creation_date
       t.integer :post_number
     end
   end

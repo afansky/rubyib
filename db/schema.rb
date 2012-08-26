@@ -22,13 +22,13 @@ ActiveRecord::Schema.define(:version => 20120711133946) do
   end
 
   create_table "posts", :force => true do |t|
-    t.integer "board_thread_id"
-    t.string  "name"
-    t.string  "email"
-    t.string  "topic"
-    t.text    "text"
-    t.date    "creation_date"
-    t.integer "post_number"
+    t.integer  "board_thread_id"
+    t.string   "name"
+    t.string   "email"
+    t.string   "topic"
+    t.text     "text"
+    t.datetime "creation_date"
+    t.integer  "post_number"
   end
 
 end

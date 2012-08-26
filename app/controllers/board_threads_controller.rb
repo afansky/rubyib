@@ -8,7 +8,7 @@ class BoardThreadsController < ApplicationController
 
     thread.posts.new(:name => params[:name], :email => params[:email], :topic => params[:topic],
                                  :text => params[:text], :post_number => Board.max_post_number(params[:board_id]) + 1,
-                                 :creation_date => Date.current)
+                                 :creation_date => DateTime.current)
 
     thread.save
 
