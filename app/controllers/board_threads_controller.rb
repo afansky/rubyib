@@ -1,6 +1,8 @@
 class BoardThreadsController < ApplicationController
   def show
-
+    @board = Board.find_by_id params[:board_id]
+    @board_thread = BoardThread.find_by_id_and_board_id(params[:id], params[:board_id])
+    @new_post = Post.new(:board_thread_id => @board_thread.id)
   end
 
   def create

@@ -1,0 +1,39 @@
+#create_thread_container
+    = form_for [@board, @board_thread, @new_post] do |f|
+        %span.title Create new post
+
+        %span
+            %label{:for => 'thread_name'} Name:
+            %input#thread_name{:type => 'text', :name => 'name'}
+
+        %span
+            %label{:for => 'thread_email'} Email:
+            %input#thread_email{:type => 'text', :name => 'email'}
+
+        %span
+            %label{:for => 'thread_topic'} Topic:
+            %input#thread_topic{:type => 'text', :name => 'topic'}
+
+        %span
+            %label{:for => 'thread_text'} Text:
+            %textarea#thread_text{:rows => '10', :cols => '35', :name => 'text'}
+
+        %span.submit
+            %button{:type => 'submit'} Create
+
+%hr
+
+#thread_list
+    .thread
+        -#other posts
+        -@board_thread.posts.each do |post|
+            .thread_post
+                .post_title
+                    %span= post.topic
+                    %span= post.name
+                    %span= post.creation_date
+                    %span= "##{post.post_number}"
+                .post_contents
+                    %p= post.text
+            .post_delimiter
+    %hr

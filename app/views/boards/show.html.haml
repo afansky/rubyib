@@ -35,7 +35,7 @@
                     %span= "##{board_thread.posts.first.post_number}"
                     %span
                         [
-                        %a{:href => 'thread.html'} Reply
+                        = link_to "Reply", [@board, board_thread]
                         ]
                 .post_contents
                     %p= board_thread.posts.first.text
