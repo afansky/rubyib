@@ -1,5 +1,7 @@
 #create_thread_container
     = form_for [@board, @board_thread, @new_post] do |f|
+        = f.error_messages
+
         %span.title Create new post
 
         %span
