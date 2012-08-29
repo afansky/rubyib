@@ -24,7 +24,7 @@
 %hr
 
 #thread_list
-    - @board.board_threads.find_all {|t| t.posts.length > 0}.each do |board_thread|
+    - @board.board_threads.find_all {|t| t.posts.length > 0}.sort {|t1, t2| t2.posts.last.creation_date <=> t1.posts.last.creation_date}.each do |board_thread|
         .thread
             -#root post
             .thread_post
